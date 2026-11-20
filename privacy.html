@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Drlacir TikTok Auto Posting</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="./">Drlacir <span>TikTok Auto Posting</span></a>
+  <nav><a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+</header>
+<main class="legal">
+<h1>Privacy Policy</h1>
+<p><strong>Effective date:</strong> 20 November 2026</p>
+
+<p>This policy explains what data the Drlacir TikTok Auto Posting tool (“the Tool”) handles, why, where it is kept and how it
+can be deleted. The Tool is operated by Pham Kim Group, Vietnam (“we”, “us”). It is an internal tool used to produce and
+publish videos for our own TikTok account <strong>@drlacir.hn.nhn.kh</strong>. It is not offered to the public.</p>
+
+<h2>1. Who this policy applies to</h2>
+<p>It applies to the owner of the TikTok account connected to the Tool and to members of our team who use the Tool. The Tool
+does not collect data about other TikTok users or about the people who watch our videos.</p>
+
+<h2>2. Data we receive from TikTok</h2>
+<p>When the account owner signs in with TikTok and grants permission, TikTok sends us the following, and we use it only as
+described here:</p>
+<table>
+<tr><th>Data</th><th>Purpose</th><th>Where it is kept</th></tr>
+<tr><td>Access token and refresh token (OAuth)</td><td>To call the TikTok Content Posting API on behalf of the connected account</td><td>Cloudflare Workers KV, in our own Cloudflare account. The access token, which expires after about 24 hours, is also passed to our production environment while a video is being uploaded and is not written to any file there</td></tr>
+<tr><td>Open ID, granted scopes, token expiry times</td><td>To identify the connected account and know when a token must be refreshed</td><td>Cloudflare Workers KV</td></tr>
+<tr><td>Creator information returned by the Content Posting API (username, nickname, allowed privacy levels, maximum video duration, interaction settings)</td><td>To confirm that the Tool is connected to @drlacir.hn.nhn.kh and to respect the posting options TikTok allows</td><td>Read when needed. Only the username is stored, alongside the tokens</td></tr>
+<tr><td>Publish ID and posting status</td><td>To track whether an upload succeeded</td><td>Our private GitHub repository, in the review queue record</td></tr>
+</table>
+<p>We do not request access to the account’s followers, messages, comments, analytics or other users’ content, and the Tool
+does not read them.</p>
+
+<h2>3. Content the Tool creates</h2>
+<p>The Tool generates videos, headlines, captions and hashtags. Visuals are created with open-source AI image models and
+music is composed by the Tool; no third-party photos, videos or recordings are used as input. Generated content, the review
+queue and production records are stored in our private GitHub repository. Videos are sent to TikTok only after a team member
+approves them.</p>
+
+<h2>4. This website</h2>
+<p>This website is a static site hosted on GitHub Pages. It sets no cookies and contains no analytics, advertising or
+third-party scripts. GitHub, as the hosting provider, may process technical data such as IP addresses in its server logs
+under its own privacy statement.</p>
+
+<h2>5. Service providers</h2>
+<p>We rely on these providers to run the Tool. Each processes data under its own terms:</p>
+<ul>
+<li><strong>TikTok</strong>: authentication and video publishing via its official APIs.</li>
+<li><strong>Cloudflare</strong>: runs the sign-in (OAuth) service and stores the tokens in Workers KV.</li>
+<li><strong>GitHub</strong>: hosts our private code repository, the generated videos and captions, and this website.</li>
+<li><strong>Anthropic (Claude Code)</strong>: provides the cloud environment in which videos are produced and uploaded.</li>
+</ul>
+<p>We do not sell, rent or share TikTok data with anyone else, and we do not use it for advertising or profiling.</p>
+
+<h2>6. How the data is protected</h2>
+<ul>
+<li>The TikTok client secret and the tokens are never placed in our code repository or in this website.</li>
+<li>The client secret is stored only as an encrypted secret setting of our Cloudflare Worker.</li>
+<li>Requests to obtain a token from the sign-in service must present an access key known only to our team. The service
+returns tokens only to such requests.</li>
+<li>Sign-in links expire after 10 minutes and can be used once. After sign-in, the service checks that the account is
+@drlacir.hn.nhn.kh and discards the tokens if it is not.</li>
+</ul>
+<p>We rely on the standard security measures of the providers listed above and do not claim any additional certification.</p>
+
+<h2>7. Retention and deletion</h2>
+<ul>
+<li>Tokens are kept until the account is disconnected, permission is revoked, or the tokens expire. The refresh token lasts
+about one year.</li>
+<li>On disconnect, the sign-in service asks TikTok to revoke the token and deletes the stored tokens.</li>
+<li>The account owner can also remove the Tool’s access at any time in the TikTok app (Settings and privacy → Security and
+permissions → Manage app permissions). After that, the stored tokens can no longer be used.</li>
+<li>Generated videos and production records are kept as our internal records until we delete them.</li>
+</ul>
+<p>To request deletion of data connected to your TikTok account, contact us at the address below.</p>
+
+<h2>8. Children</h2>
+<p>The Tool is used only by our adult staff and is not directed at children.</p>
+
+<h2>9. Changes</h2>
+<p>If we change how the Tool handles data, we will update this page and its effective date.</p>
+
+<h2>10. Contact</h2>
+<p>Pham Kim Group, Vietnam. Email: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+</main>
+<footer>© 2026 Pham Kim Group · <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></footer>
+</body>
+</html>

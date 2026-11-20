@@ -1,0 +1,44 @@
+:root {
+  --bg: #0d0c0f;
+  --panel: #17151b;
+  --text: #f4f1ea;
+  --muted: #b9b3a7;
+  --gold: #f2c81e;
+  --line: #2a2730;
+  --max: 860px;
+}
+@media (prefers-color-scheme: light) {
+  :root { --bg: #faf8f3; --panel: #ffffff; --text: #1d1b20; --muted: #5d5850; --gold: #a07c00; --line: #e7e1d4; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--gold); }
+header, main, footer { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+header { display: flex; align-items: center; justify-content: space-between; padding-top: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 8px; }
+header .brand { font-weight: 800; letter-spacing: .02em; text-decoration: none; color: var(--text); }
+header .brand span { color: var(--gold); }
+header nav a { margin-left: 16px; text-decoration: none; color: var(--muted); font-size: 15px; }
+header nav a:first-child { margin-left: 0; }
+header nav a:hover { color: var(--gold); }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.2; margin: 40px 0 12px; }
+h2 { font-size: 22px; margin: 36px 0 10px; }
+h3 { font-size: 18px; margin: 24px 0 6px; }
+.lead { color: var(--muted); font-size: 18px; max-width: 680px; }
+.tag { display: inline-block; color: var(--bg); background: var(--gold); font-weight: 700; font-size: 13px; padding: 3px 10px; border-radius: 999px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 18px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.card h3 { margin-top: 0; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+ol.flow { padding-left: 20px; }
+ol.flow li { margin: 6px 0; }
+.note { border-left: 3px solid var(--gold); padding: 8px 14px; background: var(--panel); border-radius: 0 8px 8px 0; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; }
+.legal p, .legal li { max-width: 760px; }
+footer { margin-top: 56px; padding-top: 18px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (max-width: 520px) { header nav a { margin-left: 12px; } th, td { padding: 6px; } }

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drlacir TikTok Auto Posting</title>
+<meta name="description" content="Internal content production and publishing tool for the TikTok account @drlacir.hn.nhn.kh, operated by Pham Kim Group.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="./">Drlacir <span>TikTok Auto Posting</span></a>
+  <nav><a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+</header>
+<main>
+  <p><span class="tag">Internal tool · not a public service</span></p>
+  <h1>Short-video production and publishing for one TikTok account</h1>
+  <p class="lead">Drlacir TikTok Auto Posting is an internal tool operated by Pham Kim Group (Vietnam) to produce short
+  vertical videos about marriage and relationships for its own TikTok account
+  <strong>@drlacir.hn.nhn.kh</strong> (“Drlacir Hôn nhân không ai dạy!”), and to send those videos to that account
+  through TikTok’s official Content Posting API after a person has reviewed them.</p>
+
+  <h2>What the tool does</h2>
+  <div class="grid">
+    <div class="card"><h3>1. Writes the content</h3><p>Drafts a headline, short text, caption and hashtags in Vietnamese, checks them against
+    the channel’s style rules and against previously produced posts to avoid repetition.</p></div>
+    <div class="card"><h3>2. Creates the visuals</h3><p>Generates background images with open-source AI image models and adds camera-style
+    motion. No third-party photos or videos are used as input.</p></div>
+    <div class="card"><h3>3. Adds music</h3><p>Uses instrumental music composed by the tool itself, chosen to match the mood of the text.</p></div>
+    <div class="card"><h3>4. Renders the video</h3><p>Produces a 1080 × 1920 MP4 with the text overlaid, then places it in a review queue.</p></div>
+  </div>
+
+  <h2>How TikTok is used</h2>
+  <ol class="flow">
+    <li>The owner of <strong>@drlacir.hn.nhn.kh</strong> signs in with TikTok (Login Kit) and authorises the scopes
+      <code>user.info.basic</code>, <code>video.upload</code> and <code>video.publish</code>.</li>
+    <li>Before uploading, the tool reads the creator information returned by the Content Posting API to confirm that it is
+      connected to <strong>@drlacir.hn.nhn.kh</strong> and nothing else.</li>
+    <li>A video is uploaded only after a team member has approved it in the review queue. By default it is sent as a private
+      post or to the TikTok inbox as a draft, so the account owner makes the final decision in the TikTok app.</li>
+    <li>Videos with AI-generated visuals are marked as AI-generated content when posted.</li>
+  </ol>
+  <p class="note">This tool is not offered to other TikTok users. It connects to one account owned by its operator and does not
+  read, collect or analyse content or data from any other TikTok user.</p>
+
+  <h2>Contact</h2>
+  <p>Pham Kim Group, Vietnam. Email: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+</main>
+<footer>© 2026 Pham Kim Group · <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></footer>
+</body>
+</html>
